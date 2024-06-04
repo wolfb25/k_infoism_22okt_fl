@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BukkMaraton2019GUI.MainPage">
+
+	<Grid x:Name="ResponsiveGrid">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="3*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<Label 
+			Text="Táv:"
+			FontSize="Small"
+			Margin="20, 0"
+			Grid.Row="0"
+			Grid.Column="0"
+			HorizontalOptions="Start"
+			VerticalOptions="Center"/>
+		
+		<Picker x:Name="tavValaszto"
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="20, 0"
+			HorizontalOptions="End"
+			VerticalOptions="Center">
+			
+			<Picker.ItemsSource>
+				<x:Array Type="{x:Type x:String}">
+					<x:String>Mini - 16km</x:String>
+					<x:String>Rövid - 38km</x:String>
+					<x:String>Pedelec - 54km</x:String>
+					<x:String>Közép - 57km</x:String>
+					<x:String>Hosszú - 94km</x:String>
+				</x:Array>
+			</Picker.ItemsSource>
+			
+		</Picker>
+
+		<Label 
+			Text="Idő [óra:perc:mp]:"
+			FontSize="Small"
+			Margin="20, 0"
+			Grid.Row="1"
+			Grid.Column="0"
+			HorizontalOptions="Start"
+			VerticalOptions="Center"/>
+
+		<TimePicker
+			Time="1:00:00"
+			Format="HH:mm:ss"
+			Grid.Row="1"
+			Grid.Column="0"
+			Margin="20, 0"
+			HorizontalOptions="End"
+			VerticalOptions="Center"/>
+
+	</Grid>
+
+</ContentPage>
