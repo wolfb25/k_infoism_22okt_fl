@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BukkMaraton2019GUI.MainPage">
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="BukkMaraton2019GUI.MainPage"
+			 xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
 	<Grid x:Name="ResponsiveGrid">
 
@@ -53,14 +54,19 @@
 			HorizontalOptions="Start"
 			VerticalOptions="Center"/>
 
-		<TimePicker
-			Time="1:00:00"
-			Format="HH:mm:ss"
+		<Entry
 			Grid.Row="1"
 			Grid.Column="0"
 			Margin="20, 0"
 			HorizontalOptions="End"
-			VerticalOptions="Center"/>
+			VerticalOptions="Center">
+			<Entry.Behaviors>
+				<toolkit:TextValidationBehavior 
+					InvalidStyle="{StaticResource InvalidEntryStyle}"
+					ValidStyle="{StaticResource ValidEntryStyle}"
+					Flags="ValidateOnValueChanged"/>
+			</Entry.Behaviors> 
+		</Entry>
 
 	</Grid>
 
